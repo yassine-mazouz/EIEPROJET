@@ -1,9 +1,10 @@
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
-<%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib
+        prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<spring:url value="/resources/" var="resources" />
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page session="false"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
 
 
 <!DOCTYPE html>
@@ -25,11 +26,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
     <title>Xtreme admin Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
+    <link href="../../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link href="../../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link href="../../assets/libs/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet" />
     <link href="../../assets/extra-libs/calendar/calendar.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link href="../../dist/css/style.min.css" rel="stylesheet">
     <link href="../../dist/css/<spring:message code="label.lang" />/fonteie.css" rel="stylesheet">
+   <%-- datatable--%>
+    <link href="../../assets/libs/jsgrid/jsgrid.min.css" rel="stylesheet">
+    <link href="../../assets/libs/jsgrid/jsgrid-theme.min.css" rel="stylesheet">
 <%--
     <link href="../../dist/css/fontstyle.css" rel="stylesheet">
 --%>
@@ -66,7 +73,7 @@
                 <!-- ============================================================== -->
                 <!-- Logo -->
                 <!-- ============================================================== -->
-                <br class="navbar-brand" href="index.html">
+                <br class="navbar-brand" href="#">
                     <!-- Logo icon -->
                     <b class="logo-icon">
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -100,7 +107,7 @@
                     <!-- mega menu -->
                     <!-- ============================================================== -->
                     <li class="nav-item dropdown mega-dropdown"><a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="d-none d-md-block">Mega <i class="fa fa-angle-down"></i></span>
+                        <span class="d-none d-md-block"><spring:message code="label.mega"></spring:message> <i class="fa fa-angle-down"></i></span>
                         <span class="d-block d-md-none"><i class="mdi mdi-dialpad font-24"></i></span>
                     </a>
                         <div class="dropdown-menu animated bounceInDown">
@@ -209,7 +216,7 @@
                     <!-- ============================================================== -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="d-none d-md-block" style="font-family: Sans-Serif">Creat New <i class="fa fa-angle-down"></i></span>
+                            <span class="d-none d-md-block" style="font-family: Sans-Serif"><spring:message code="label.creer"></spring:message> <i class="fa fa-angle-down"></i></span>
                             <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">

@@ -1,5 +1,13 @@
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib
+        prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<spring:url value="/resources/" var="resources" />
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page session="false"%>
+
 <footer class="footer text-center">
-    All Rights Reserved by Xtreme admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+    <spring:message code="label.allright"></spring:message> <a href="https://twinsgroupe.com/">Twins Groupe</a>.
 </footer>
 <!-- ============================================================== -->
 <!-- End footer -->
@@ -12,7 +20,7 @@
 <!-- ============================================================== -->
 <!-- End Wrapper -->
 <!-- ============================================================== -->
-<aside class="customizer  dd">
+<aside class="customizer">
     <a href="javascript:void(0)" class="service-panel-toggle"><i class="fa fa-spin fa-cog"></i></a>
     <div class="customizer-body">
         <ul class="nav customizer-tab" role="tablist">
@@ -34,31 +42,31 @@
             <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                 <div class="p-15 border-bottom">
                     <!-- Sidebar -->
-                    <h5 class="font-medium mb-2 mt-2">Layout Settings</h5>
+                    <h5 class="font-medium mb-2 mt-2"><spring:message code="label.lyaoutseting"></spring:message> </h5>
                     <div class="custom-control custom-checkbox mt-2">
                         <input type="checkbox" class="custom-control-input" name="theme-view" id="theme-view">
-                        <label class="custom-control-label" for="theme-view">Dark Theme</label>
+                        <label class="custom-control-label" for="theme-view"><spring:message code="label.darktheme"></spring:message> </label>
                     </div>
                     <div class="custom-control custom-checkbox mt-2">
                         <input type="checkbox" class="custom-control-input sidebartoggler" name="collapssidebar" id="collapssidebar">
-                        <label class="custom-control-label" for="collapssidebar">Collapse Sidebar</label>
+                        <label class="custom-control-label" for="collapssidebar"><spring:message code="label.colapsidbar"></spring:message> </label>
                     </div>
                     <div class="custom-control custom-checkbox mt-2">
                         <input type="checkbox" class="custom-control-input" name="sidebar-position" id="sidebar-position">
-                        <label class="custom-control-label" for="sidebar-position">Fixed Sidebar</label>
+                        <label class="custom-control-label" for="sidebar-position"><spring:message code="label.fixedsidbar"></spring:message></label>
                     </div>
                     <div class="custom-control custom-checkbox mt-2">
                         <input type="checkbox" class="custom-control-input" name="header-position" id="header-position">
-                        <label class="custom-control-label" for="header-position">Fixed Header</label>
+                        <label class="custom-control-label" for="header-position"><spring:message code="label.fixeheadr"></spring:message> </label>
                     </div>
                     <div class="custom-control custom-checkbox mt-2">
                         <input type="checkbox" class="custom-control-input" name="boxed-layout" id="boxed-layout">
-                        <label class="custom-control-label" for="boxed-layout">Boxed Layout</label>
+                        <label class="custom-control-label" for="boxed-layout"><spring:message code="label.boxedlyout"></spring:message> </label>
                     </div>
                 </div>
                 <div class="p-15 border-bottom">
                     <!-- Logo BG -->
-                    <h5 class="font-medium mb-2 mt-2">Logo Backgrounds</h5>
+                    <h5 class="font-medium mb-2 mt-2"><spring:message code="label.logoback"></spring:message> </h5>
                     <ul class="theme-color">
                         <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin1"></a></li>
                         <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-logobg="skin2"></a></li>
@@ -71,7 +79,7 @@
                 </div>
                 <div class="p-15 border-bottom">
                     <!-- Navbar BG -->
-                    <h5 class="font-medium mb-2 mt-2">Navbar Backgrounds</h5>
+                    <h5 class="font-medium mb-2 mt-2"><spring:message code="label.navbarback"></spring:message> </h5>
                     <ul class="theme-color">
                         <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin1"></a></li>
                         <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-navbarbg="skin2"></a></li>
@@ -84,7 +92,7 @@
                 </div>
                 <div class="p-15 border-bottom">
                     <!-- Logo BG -->
-                    <h5 class="font-medium mb-2 mt-2">Sidebar Backgrounds</h5>
+                    <h5 class="font-medium mb-2 mt-2"><spring:message code="label.sidbarback"></spring:message> </h5>
                     <ul class="theme-color">
                         <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin1"></a></li>
                         <li class="theme-item"><a href="javascript:void(0)" class="theme-link" data-sidebarbg="skin2"></a></li>
@@ -252,6 +260,19 @@
 <script src="../../assets/libs/moment/min/moment.min.js"></script>
 <script src="../../assets/libs/fullcalendar/dist/fullcalendar.min.js"></script>
 <script src="../../dist/js/pages/calendar/cal-init.js"></script>
+<!--chartis chart-->
+<script src="../../assets/libs/chartist/dist/chartist.min.js"></script>
+<script src="../../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+<!--c3 charts -->
+<script src="../../assets/extra-libs/c3/d3.min.js"></script>
+<script src="../../assets/extra-libs/c3/c3.min.js"></script>
+<!--chartjs -->
+<script src="../../assets/libs/chart.js/dist/Chart.min.js"></script>
+<script src="../../dist/js/pages/dashboards/dashboard1.js"></script
+        <!--This page JavaScript -->
+<script src="../../assets/libs/jsgrid/db.js"></script>
+<script src="../../assets/libs/jsgrid/jsgrid.min.js"></script>
+<script src="../../dist/js/pages/tables/jsgrid-init.js"></script>
 <script>
 </script>
 </body>

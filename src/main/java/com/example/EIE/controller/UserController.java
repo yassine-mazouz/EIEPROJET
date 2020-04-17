@@ -14,9 +14,32 @@ public class UserController {
         return new ModelAndView("index", model);
     }*/
 
-    @RequestMapping(value = { "/", "/login1" })
-    public String staticResource(Model model) {
-        return "index";
+    @RequestMapping(value = { "/","/login" })
+    public ModelAndView staticResource(Model model) {
+
+        return new ModelAndView("login/login");
+
     }
+    
+
+    @RequestMapping(value = { "/dashboard" })
+    public ModelAndView dashboard(Model model) {
+        Map<String, Object> mdl = new HashMap<String, Object>();
+
+        mdl.put("name_page","dashboard/dashboard.jsp");
+
+        return new ModelAndView("index", mdl);
+    }
+
+    @RequestMapping(value = { "/page" })
+    public ModelAndView page(Model model) {
+        Map<String, Object> mdl = new HashMap<String, Object>();
+
+        mdl.put("name_page","pagetest/page.jsp");
+
+        return new ModelAndView("index", mdl);
+    }
+
+    
 
 }

@@ -1,15 +1,24 @@
-<!-- ============================================================== -->
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%><%@ taglib
+        prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<spring:url value="/resources/" var="resources" />
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page session="false"%>
+
+
+<!--============================================================== -->
 <!-- Bread crumb and right sidebar toggle -->
 <!-- ============================================================== -->
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-5 align-self-center">
-            <h4 class="page-title">Dashboard</h4>
+            <h4 class="page-title"><spring:message code="label.dashboard"></spring:message></h4>
             <div class="d-flex align-items-center">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Library</li>
+                        <li class="breadcrumb-item"><a href="#"><spring:message code="label.home"></spring:message></a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><spring:message code="label.library"></spring:message></li>
                     </ol>
                 </nav>
             </div>
@@ -19,8 +28,8 @@
                 <div class="mr-2">
                     <div class="lastmonth"></div>
                 </div>
-                <div class=""><small>LAST MONTH</small>
-                    <h4 class="text-info mb-0 font-medium">$58,256</h4></div>
+                <div class=""><small><spring:message code="label.lastmonth"></spring:message> </small>
+                    <h4 class="text-info mb-0 font-medium">58,256 <spring:message code="label.mad"></spring:message></h4></div>
             </div>
         </div>
     </div>
@@ -41,20 +50,20 @@
                 <div class="card-body">
                     <div class="d-md-flex align-items-center">
                         <div>
-                            <h4 class="card-title">Sales Summary</h4>
-                            <h5 class="card-subtitle">Overview of Latest Month</h5>
+                            <h4 class="card-title"><spring:message code="label.resumeventes"></spring:message> </h4>
+                            <h5 class="card-subtitle"><spring:message code="label.overveiw"></spring:message> </h5>
                         </div>
                         <div class="ml-auto d-flex no-block align-items-center">
                             <ul class="list-inline font-12 dl mr-3 mb-0">
-                                <li class="list-inline-item text-info"><i class="fa fa-circle"></i> Iphone</li>
-                                <li class="list-inline-item text-primary"><i class="fa fa-circle"></i> Ipad</li>
+                                <li class="list-inline-item text-info"><i class="fa fa-circle"></i><spring:message code="label.iphone"></spring:message> </li>
+                                <li class="list-inline-item text-primary"><i class="fa fa-circle"></i><spring:message code="label.ipad"></spring:message> </li>
                             </ul>
                             <div class="dl">
                                 <select class="custom-select">
-                                    <option value="0" selected>Monthly</option>
-                                    <option value="1">Daily</option>
-                                    <option value="2">Weekly</option>
-                                    <option value="3">Yearly</option>
+                                    <option value="0" selected><spring:message code="label.mensuel"></spring:message> </option>
+                                    <option value="1"><spring:message code="label.quotidien"></spring:message> </option>
+                                    <option value="2"><spring:message code="label.hebdomadaire"></spring:message></option>
+                                    <option value="3"><spring:message code="label.annuel"></spring:message> </option>
                                 </select>
                             </div>
                         </div>
@@ -62,11 +71,11 @@
                     <div class="row">
                         <!-- column -->
                         <div class="col-lg-4">
-                            <h1 class="mb-0 mt-4">$6,890.68</h1>
-                            <h6 class="font-light text-muted">Current Month Earnings</h6>
-                            <h3 class="mt-4 mb-0">1,540</h3>
-                            <h6 class="font-light text-muted">Current Month Sales</h6>
-                            <a class="btn btn-info mt-3 p-15 pl-4 pr-4 mb-3" href="javascript:void(0)">Last Month Summary</a>
+                            <h1 class="mb-0 mt-4">6,890.68 <spring:message code="label.mad"></spring:message></h1>
+                            <h6 class="font-light text-muted"><spring:message code="label.gain"></spring:message> </h6>
+                            <h3 class="mt-4 mb-0">1,540 <spring:message code="label.mad"></spring:message></h3>
+                            <h6 class="font-light text-muted"><spring:message code="label.curentsales"></spring:message> </h6>
+                            <a class="btn btn-info mt-3 p-15 pl-4 pr-4 mb-3" href="javascript:void(0)"><spring:message code="label.resummois"></spring:message> </a>
                         </div>
                         <!-- column -->
                         <div class="col-lg-8">
@@ -84,8 +93,8 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="d-flex align-items-center">
                                 <div class="mr-2"><span class="text-orange display-5"><i class="mdi mdi-wallet"></i></span></div>
-                                <div><span>Wallet Balance</span>
-                                    <h3 class="font-medium mb-0">$3,567.53</h3>
+                                <div><span><spring:message code="label.walletlebans"></spring:message> </span>
+                                    <h3 class="font-medium mb-0">3,567.53 <spring:message code="label.mad"></spring:message></h3>
                                 </div>
                             </div>
                         </div>
@@ -94,8 +103,8 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="d-flex align-items-center">
                                 <div class="mr-2"><span class="text-cyan display-5"><i class="mdi mdi-star-circle"></i></span></div>
-                                <div><span>Referral Earnings</span>
-                                    <h3 class="font-medium mb-0">$769.08</h3>
+                                <div><span><spring:message code="label.gainsearn"></spring:message> </span>
+                                    <h3 class="font-medium mb-0">769.08  <spring:message code="label.mad"></spring:message></h3>
                                 </div>
                             </div>
                         </div>
@@ -104,8 +113,8 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="d-flex align-items-center">
                                 <div class="mr-2"><span class="text-info display-5"><i class="mdi mdi-shopping"></i></span></div>
-                                <div><span>Estimate Sales</span>
-                                    <h3 class="font-medium mb-0">5489</h3></div>
+                                <div><span><spring:message code="label.rstimate"></spring:message> </span>
+                                    <h3 class="font-medium mb-0">5489 <spring:message code="label.mad"></spring:message></h3></div>
                             </div>
                         </div>
                         <!-- col -->
@@ -113,8 +122,8 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="d-flex align-items-center">
                                 <div class="mr-2"><span class="text-primary display-5"><i class="mdi mdi-currency-usd"></i></span></div>
-                                <div><span>Earnings</span>
-                                    <h3 class="font-medium mb-0">$23,568.90</h3>
+                                <div><span><spring:message code="label.gain"></spring:message> </span>
+                                    <h3 class="font-medium mb-0">23,568.90 <spring:message code="label.mad"></spring:message></h3>
                                 </div>
                             </div>
                         </div>
@@ -219,7 +228,7 @@
                     <div class="d-flex align-items-center mt-4">
                         <div class="" id="ravenue"></div>
                         <div class="ml-auto">
-                            <h3 class="font-medium white-text mb-0">$351</h3><span class="white-text op-5">Jan 10  - Jan  20</span>
+                            <h3 class="font-medium white-text mb-0">351 <spring:message code="label.mad"></spring:message></h3><span class="white-text op-5">Jan 10  - Jan  20</span>
                         </div>
                     </div>
                 </div>
@@ -311,7 +320,7 @@
                                 </td>
                                 <td><i class="fa fa-circle text-orange" data-toggle="tooltip" data-placement="top" title="In Progress"></i></td>
                                 <td>35</td>
-                                <td class="blue-grey-text  text-darken-4 font-medium">$96K</td>
+                                <td class="blue-grey-text  text-darken-4 font-medium">96K <spring:message code="label.mad"></spring:message></td>
                             </tr>
                             <tr>
                                 <td>
@@ -331,7 +340,7 @@
                                 </td>
                                 <td><i class="fa fa-circle text-success" data-toggle="tooltip" data-placement="top" title="Active"></i></td>
                                 <td>35</td>
-                                <td class="blue-grey-text  text-darken-4 font-medium">$96K</td>
+                                <td class="blue-grey-text  text-darken-4 font-medium">96K <spring:message code="label.mad"></spring:message></td>
                             </tr>
                             <tr>
                                 <td>
@@ -352,7 +361,7 @@
                                 </td>
                                 <td><i class="fa fa-circle text-success" data-toggle="tooltip" data-placement="top" title="Active"></i></td>
                                 <td>35</td>
-                                <td class="blue-grey-text  text-darken-4 font-medium">$96K</td>
+                                <td class="blue-grey-text  text-darken-4 font-medium">96K <spring:message code="label.mad"></spring:message></td>
                             </tr>
                             <tr>
                                 <td>
@@ -371,7 +380,7 @@
                                 </td>
                                 <td><i class="fa fa-circle text-orange" data-toggle="tooltip" data-placement="top" title="In Progress"></i></td>
                                 <td>35</td>
-                                <td class="blue-grey-text  text-darken-4 font-medium">$96K</td>
+                                <td class="blue-grey-text  text-darken-4 font-medium">96K <spring:message code="label.mad"></spring:message></td>
                             </tr>
                             </tbody>
                         </table>
